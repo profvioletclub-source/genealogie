@@ -17,7 +17,7 @@ fetch("parentes.json")
 
     if (name) {
       // Afficher la page individuelle
-      const list = relationMap[name] || [];
+      const list = parenteMap[name] || [];
       document.body.innerHTML = `
         <header><h1>Réseau de parenté</h1></header>
         <main>
@@ -31,7 +31,7 @@ fetch("parentes.json")
     } else {
       // Afficher l’index avec des cards
       const container = document.getElementById("cards-container");
-      Object.keys(relationMap).forEach(person => {
+      Object.keys(parenteMap).forEach(person => {
         const card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `<h3>${person}</h3>`;
