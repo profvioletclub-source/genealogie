@@ -15,15 +15,31 @@ fetch("parentes.json")
     const params = new URLSearchParams(window.location.search);
     const name = params.get("name");
 
-    if (name && parenteMap[name]) {
-      const list = parenteMap[name];
-      document.getElementById("parentes").innerHTML =
-        `<h2>Parentés de ${name}</h2><ul>` +
-        list.map(l => `<li>${l}</li>`).join("") +
-        "</ul>";
+    if (name) {
+      // Afficher la page individuelle
+      const list = relationMap[name] || [];
+      document.body.innerHTML = `
+        <header><h1>Réseau de parenté</h1></header>
+        <main>
+          <h2>Parentés de ${name}</h2>
+          <ul>
+            ${list.map(l => `<li>${l}</li>`).join("")}
+          </ul>
+          <p><a href="index.html">← Retour à l’index</a></p>
+        </main>
+      `;
     } else {
-      document.getElementById("parentes").innerHTML =
-        "<p>Choisissez une personne via ?name=Nom dans l’URL.</p>";
+      // Afficher l’index avec des cards
+      const container = document.getElementById("cards-container");
+      Object.keys(relationMap).forEach(person => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<h3>${person}</h3>`;
+        card.onclick = () => {
+          window.location.href = `index.html?name=${person}`;
+        };
+        container.appendChild(card);
+      });
     }
   })
   .catch(err => {
