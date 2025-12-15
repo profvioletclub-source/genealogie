@@ -1,9 +1,9 @@
 // Charger le fichier JSON central
 fetch("parentes.json")
-  .then(response => parente.json())
+  .then(response => response.json())
   .then(data => {
     // Construire une map des relations
-    const relationMap = {};
+    const parenteMap = {};
     data.forEach(([p1, p2]) => {
       if (!parenteMap[p1]) parenteMap[p1] = [];
       if (!parenteMap[p2]) parenteMap[p2] = [];
