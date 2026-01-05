@@ -8,15 +8,15 @@ fetch("parentes.json")
       if (!parenteMap[p1]) parenteMap[p1] = [];
       if (!parenteMap[p2]) parenteMap[p2] = [];
       parenteMap[p1].push(p2);
-      parenteMap[p2].push(p1); // ajoute automatiquement l’autre sens
+      parenteMap[p2].push(p1);
     });
 
-    // Récupérer le paramètre "name" dans l’URL (ex: index.html?name=A)
+    // Récupérer le paramètre "name" dans l’URL
     const params = new URLSearchParams(window.location.search);
     const name = params.get("name");
 
     if (name) {
-      // Page individuelle → afficher les relations en cards
+      // --- PAGE INDIVIDUELLE ---
       const list = parenteMap[name] || [];
       const container = document.createElement("div");
       container.id = "cards-container";
@@ -41,7 +41,9 @@ fetch("parentes.json")
       document.querySelector("main").appendChild(container);
 
     } else {
-      // Index général → afficher toutes les personnes en cards
+      // --- INDEX GÉNÉRAL ---
+
+      // 1) Cards principales
       const container = document.getElementById("cards-container");
       Object.keys(parenteMap).forEach(person => {
         const card = document.createElement("div");
@@ -51,6 +53,19 @@ fetch("parentes.json")
           window.location.href = `index.html?name=${person}`;
         };
         container.appendChild(card);
+      });
+
+      // 2) ⭐⭐ ICI : cards sous le h2 "Listes des Généalogie" ⭐⭐
+      const genealogyContainer = document.getElementById("genealogie-cards");
+
+      Object.keys(parenteMap).forEach(person => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.innerHTML = `<h3>${person}</h3>`;
+        card.onclick = () => {
+          window.location.href = `index.html?name=${person}`;
+        };
+        genealogyContainer.appendChild(card);
       });
     }
   })
