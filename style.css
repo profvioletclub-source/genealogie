@@ -12,17 +12,42 @@ body {
 header {
   background: #002366;      /* Bleu roi */
   color: white;
-  padding: 1em;
+  padding: 1.5rem;
   text-align: center;
 }
 
-h1, h2 {
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0;
   color: #002366;           /* Bleu roi */
   text-align: center;
 }
 
+h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 1.2rem 0;
+  color: #002366;
+  text-align: center;
+}
+
 /* ------------------------------
-   CARDS (style commun)
+   CONTAINERS DE CARDS
+------------------------------ */
+
+#cards-container,
+#genealogie-cards,
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+/* ------------------------------
+   CARDS STANDARD
 ------------------------------ */
 
 .card {
@@ -43,21 +68,7 @@ h1, h2 {
 }
 
 /* ------------------------------
-   CONTAINERS DE CARDS
------------------------------- */
-
-#cards-container,
-#genealogie-cards,
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem 2rem;
-}
-
-/* ------------------------------
-   CARDS SPÉCIALES
+   CARDS SPÉCIALES (ex : arbre généalogique)
 ------------------------------ */
 
 .special-card {
@@ -79,4 +90,3 @@ ul {
   padding: 0;
   margin: 0;
 }
-
