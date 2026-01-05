@@ -16,6 +16,10 @@ header {
   text-align: center;
 }
 
+header h1 {
+  color: white;            /* Titre bien visible dans le header bleu */
+}
+
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
