@@ -63,3 +63,32 @@ ul {
   transform: scale(1.05);
   background: #f0f0f0;
 }
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 1em;
+  width: 180px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
+
+.special-card {
+  background: #dfeaff;
+  border: 2px solid #6a8cff;
+}
