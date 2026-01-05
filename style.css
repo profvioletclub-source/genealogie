@@ -1,94 +1,81 @@
+/* ------------------------------
+   BASE GÉNÉRALE
+------------------------------ */
+
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #F8F5E9;      /* Ivoire */
+  color: #5A3E2B;           /* Brun */
   margin: 0;
 }
 
 header {
-  background: #333;
+  background: #002366;      /* Bleu roi */
   color: white;
   padding: 1em;
   text-align: center;
 }
 
-#cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  padding: 2em;
-  justify-content: center;
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  padding: 1em;
-  width: 150px;
+h1, h2 {
+  color: #002366;           /* Bleu roi */
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  background: #f0f0f0;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-#genealogie-cards {
-  display: flex;
-  flex-wrap: wrap;        /* Permet plusieurs colonnes */
-  justify-content: center; /* Centre les cards */
-  gap: 1.5rem;             /* Espace entre les cards */
-  padding: 1rem;
-}
+/* ------------------------------
+   CARDS (style commun)
+------------------------------ */
 
 .card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  padding: 1em;
-  width: 180px;            /* Taille fixe = colonnes propres */
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  background: #f0f0f0;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-.card {
-  background: white;
+  background: #E8DCC2;      /* Beige parchemin */
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   padding: 1em;
   width: 180px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.2s, background 0.2s;
+  border: 1px solid #5A3E2B; /* Brun */
 }
 
 .card:hover {
   transform: scale(1.05);
-  background: #f0f0f0;
+  background: #e2d2b8;      /* Beige légèrement plus foncé */
 }
 
+/* ------------------------------
+   CONTAINERS DE CARDS
+------------------------------ */
+
+#cards-container,
+#genealogie-cards,
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+/* ------------------------------
+   CARDS SPÉCIALES (ex : arbre généalogique)
+------------------------------ */
+
 .special-card {
-  background: #dfeaff;
-  border: 2px solid #6a8cff;
+  background: #002366;      /* Bleu roi */
+  color: white;
+  border: 2px solid #D4AF37; /* Or */
+}
+
+.special-card:hover {
+  background: #0a3a8a;      /* Bleu roi éclairci */
+}
+
+/* ------------------------------
+   LISTES
+------------------------------ */
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
