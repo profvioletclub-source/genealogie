@@ -39,3 +39,27 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+#genealogie-cards {
+  display: flex;
+  flex-wrap: wrap;        /* Permet plusieurs colonnes */
+  justify-content: center; /* Centre les cards */
+  gap: 1.5rem;             /* Espace entre les cards */
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  padding: 1em;
+  width: 180px;            /* Taille fixe = colonnes propres */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #f0f0f0;
+}
