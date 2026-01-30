@@ -1,0 +1,20 @@
+{
+  "name": "Parentés Ksos",
+  "short_name": "Parentés Ksos",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2b2b2b",
+  "icons": [
+    {
+      "src": "images/app192.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "images/app512.jpeg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
